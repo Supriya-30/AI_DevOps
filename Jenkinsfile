@@ -7,14 +7,6 @@ pipeline {
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
-    stages {
-
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/Supriya-30'
-            }
-        }
 
         stage('Build Docker Image') {
             steps {
