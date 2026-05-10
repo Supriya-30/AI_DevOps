@@ -3,10 +3,11 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "supriyasarkar/backend"
+        IMAGE_NAME = "Supriya-30/backend"
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
+    stages {
 
         stage('Build Docker Image') {
             steps {
@@ -24,6 +25,7 @@ pipeline {
 
         stage('DockerHub Login') {
             steps {
+
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub-creds',
                     usernameVariable: 'DOCKER_USER',
